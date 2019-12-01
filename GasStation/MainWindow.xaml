@@ -1,0 +1,45 @@
+﻿<Window x:Class="GasStation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+          xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" 
+        xmlns:local="clr-namespace:GasStation"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="122*"/>
+            <ColumnDefinition Width="127*"/>
+            <ColumnDefinition Width="151*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="38*"/>
+            <RowDefinition Height="42*"/>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="49*"/>
+            <RowDefinition Height="42*"/>
+            <RowDefinition Height="218*"/>
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Center"  Text="Название товара" TextWrapping="Wrap" VerticalAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Center" Grid.Column="1"  Text="Цена за штуку(тг)" TextWrapping="Wrap" VerticalAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Center" Grid.Column="2"  Text="Количество" TextWrapping="Wrap" VerticalAlignment="Center"/>
+
+        <TextBlock Grid.Row="1" Text="Вода 1 л" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Name="waterPrice" Grid.Row="1" Grid.Column="1" Text="150" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <xctk:IntegerUpDown Name="waterNumber"  Value="0" Grid.Column="2" FormatString="N0"   Minimum="0" Maximum="100" Margin="0,38,0,0" Grid.RowSpan="2"/>
+
+        <TextBlock Grid.Row="2" Text="Бензин АИ 92" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Name="oil90Price" Grid.Row="2" Grid.Column="1" Text="250" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <xctk:IntegerUpDown Name="oil90Number" Grid.Row="1" Grid.Column="2"   FormatString="N0" Minimum="0" Value="0" Maximum="100" Margin="0,42,0,0" Grid.RowSpan="2"/>
+
+        <TextBlock Grid.Row="3" Text="Бензин АИ 80" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Name="oil80Price" Grid.Row="3" Grid.Column="1" Text="150" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <xctk:IntegerUpDown Name="oil80Number"  Value="0" Grid.Row="2" Grid.Column="2"   FormatString="N0" Minimum="0" Maximum="100" Margin="0,45,0,0" Grid.RowSpan="2"/>
+
+        <TextBlock Grid.Row="4" Text="Сникерс" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+        <TextBlock Name="snikersPrice" Grid.Row="4" Grid.Column="1" Text="150" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <xctk:IntegerUpDown Name="snikersNumber"  Value="0" Grid.Row="4" Grid.Column="2"   FormatString="N0" Minimum="0" Maximum="100"  />
+        <Button Content="Купить" Grid.Column="2" HorizontalAlignment="Left" Margin="151,155,0,0" Grid.Row="5" VerticalAlignment="Top" RenderTransformOrigin="1.206,1.708" Height="29" Width="60" Click="Buy"/>
+         </Grid>
+</Window>
